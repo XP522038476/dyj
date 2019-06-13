@@ -45,8 +45,14 @@ function go() {
 	}else {
 		mark++;
 		var ui =document.getElementById("tip");
-		if(mark > 3) {
+		if(mark == 3) {
 			ui.innerHTML = "看看手牌正面哟~";
+		}else if(mark == 4){
+			ui.innerHTML = "是纯数字哟~";
+		}else if(mark == 5){
+			ui.innerHTML = "也许是一个物品的价格~";
+		}else{
+			ui.innerHTML = "纯数字、价格、手牌正面♥";
 		}
 		ui.style.display="inline";
 	}
