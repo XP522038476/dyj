@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+#tip {
+	display: none;
+	color: red;
+}
+.love_block {
+	
+}
+.pw_input {
+
+}
+.pw_button {
+
+}
+</style>
+<script type="text/javascript" src="js/md5.js"></script>
+<script>
+var mark = 0;
+function go() {
+	var pw = document.getElementById('pw').value;
+	var hash = hex_md5(pw);
+	if(hash == '8fecb20817b3847419bb3de39a609afe') {
+		window.location.href="start.html"; 	
+	}else {
+		mark++;
+		var ui =document.getElementById("tip");
+		if(mark > 3) {
+			ui.innerHTML = "看看手牌正面哟~";
+		}
+		ui.style.display="inline";
+	}
+}
+</script>
+</head>
+<body style="text-align:center; margin-top: 520px; background: #FFDAB9;">
+	<div class="love_block">
+		<h1 id="tip">错了哟~，再想想~</h1><br>
+		<input class="pw_input" id="pw" type="password"/><br>
+		<input type="button" onclick="go()" value="Love from click here~ ♥♥♥">
+	</div>
+</body>
+</html>
